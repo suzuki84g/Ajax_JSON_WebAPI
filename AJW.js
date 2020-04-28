@@ -9,10 +9,11 @@ push.onclick = () => {
     newScript.id = 'newScript';
     newScript.src = urlText;  // scriptのsrcにurlTextを挿入
 
-    // body要素の末尾にscript要素を追加する。
+    // body末尾にscriptの追加と削除
     document.body.appendChild(newScript);
-    // TODO:body要素のscript要素を削除する。
     document.body.removeChild(newScript);
+
+    // TODO:コールバック関数の扱い
 };
 
 // 戻ってきた値の処理
