@@ -1,14 +1,15 @@
-const push = document.getElementById('btn');
+const push = document.getElementById('btn');  // 送信button
 
 // ボタン押下時の動作
 push.onclick = () => {
     // script要素を生成する
-    // script要素のsrc属性にリクエストURLを指定する。
-    // リクエストURL→ ' ベースとなるURL  ? ' +  Zipcodeに入力された郵便番号を指定  + '& callbackに関数名を指定する  ';
+    let newScript = document.createElement('script');  // scriptタグを作成
+    let zipcode = document.getElementById('zipcode').value;  // 入力された郵便番号を取得
+    let urlText = 'https://zip-cloud.appspot.com/api/search?zipcode=' + zipcode + '&callback';  // 送信するURLを作成
+    newScript.src = "urlText";  // scriptのsrcにurlTextを挿入
 
-    // body要素の末尾にscript要素を追加する。
-    // body要素のscript要素を削除する。
-    alert('testです');
+    // TODO:body要素の末尾にscript要素を追加する。
+    // TODO:body要素のscript要素を削除する。
 };
 
 // 戻ってきた値の処理
