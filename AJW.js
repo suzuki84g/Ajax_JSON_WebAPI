@@ -12,16 +12,25 @@ push.onclick = () => {
     // body末尾にscriptの追加と削除
     document.body.appendChild(newScript);
     document.body.removeChild(newScript);
-
-    // TODO:コールバック関数の扱い
 };
 
-// 戻ってきた値の処理
-// callback(data) {
+// コールバック関数で呼び出される
+callback = (data) => {
+    console.log(data);
+}
+
+
+// callback = (data) => {
 //     if (data.results) {
 //     // 都道府県の欄に都道府県名を表示する。
+//         let prefecture = document.getElementById('prefecture');
+//         prefecture.value = results[0].address1;
 //     // 市区町村の欄に市区町村名を表示する。
+//         let city = document.getElementById('city');
+//         city.value = address2;
 //     // 住所の欄に町域名を表示する。
+//         let address = document.getElementById('address')
+//         address.value = address3;
 //     } else {
 //         alert('該当するデータが見つかりませんでした');
 //     };
