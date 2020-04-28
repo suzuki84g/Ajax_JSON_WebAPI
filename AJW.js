@@ -6,10 +6,13 @@ push.onclick = () => {
     let newScript = document.createElement('script');  // scriptタグを作成
     let zipcode = document.getElementById('zipcode').value;  // 入力された郵便番号を取得
     let urlText = 'https://zip-cloud.appspot.com/api/search?zipcode=' + zipcode + '&callback';  // 送信するURLを作成
-    newScript.src = "urlText";  // scriptのsrcにurlTextを挿入
+    newScript.id = 'newScript';
+    newScript.src = urlText;  // scriptのsrcにurlTextを挿入
 
-    // TODO:body要素の末尾にscript要素を追加する。
+    // body要素の末尾にscript要素を追加する。
+    document.body.appendChild(newScript);
     // TODO:body要素のscript要素を削除する。
+    document.body.removeChild(newScript);
 };
 
 // 戻ってきた値の処理
