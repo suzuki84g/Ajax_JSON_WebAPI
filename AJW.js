@@ -5,7 +5,7 @@ push.onclick = () => {
     // script要素を生成する
     let newScript = document.createElement('script');  // scriptタグを作成
     let zipcode = document.getElementById('zipcode').value;  // 入力された郵便番号を取得
-    let urlText = 'https://zip-cloud.appspot.com/api/search?zipcode=' + zipcode + '&callback';  // 送信するURLを作成
+    let urlText = 'https://zip-cloud.appspot.com/api/search?zipcode=' + zipcode + '&callback=callback';  // 送信するURLを作成
     newScript.id = 'newScript';
     newScript.src = urlText;  // scriptのsrcにurlTextを挿入
 
@@ -14,11 +14,10 @@ push.onclick = () => {
     document.body.removeChild(newScript);
 };
 
-// コールバック関数で呼び出される
-callback = (data) => {
-    console.log(data);
+// コールバック関数でJSONを受け取る
+callback = (jsonData) => {
+    console.log(jsonData);
 }
-
 
 // callback = (data) => {
 //     if (data.results) {
