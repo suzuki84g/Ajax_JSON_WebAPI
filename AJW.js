@@ -17,7 +17,6 @@ push.onclick = () => {
 // コールバック関数でJSONを受け取る
 zipOutput = (data) => {
     let jsonData = data;
-    console.log(jsonData.results[0]);
     if (jsonData.results[0]) {
         document.getElementById('prefecture').value = jsonData.results[0].address1;
         document.getElementById('city').value = jsonData.results[0].address2;
